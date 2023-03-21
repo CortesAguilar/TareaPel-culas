@@ -10,6 +10,18 @@ namespace Pelicula
         public Int16 año;
         public string pais;
         public string director;
+
+        public void SetTitulo(string titulo)=> this.titulo = titulo;
+        public string GetTitulo()=> titulo;
+
+        public void SetAño(Int16 año)=> this.año = año;
+        public int GetAño()=> año;
+
+        public void SetPais(string pais)=> this.pais = pais;
+        public string GetPais()=> pais;
+
+        public void SetDirector(string director)=> this.director = director;
+        public string GetDirector()=> director;
     }
 
     class Program
@@ -17,17 +29,14 @@ namespace Pelicula
         static void Main()
         {
             Pelicula p1 = new Pelicula();
-            p1.titulo = "La forma del agua";
-            p1.año = 2017;
-            p1.pais = "México";
-            p1.director = "Guillermo del Toro";
-
+            p1.SetTitulo("La forma del agua");
+            p1.SetAño(2017);
+            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
 
             Pelicula p2 = new Pelicula();
-            p2.titulo = "El poder del perro";
-            p2.año = 2021;
-            p2.pais = "Austraila";
-            p2.director = "Jane Campion";
+            p2.SetTitulo("El poder del perro");
+            p2.SetAño(2021);
+            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
         }
     }
 }
