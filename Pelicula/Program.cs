@@ -46,10 +46,8 @@ namespace Pelicula
 
         public void AgregaActor(Actor actor) => actores.Add(actor);
 
-        public void Imprime()
-        {
-            Console.WriteLine($"{titulo}\n{año}");
-        }
+        public void Imprime() => Console.WriteLine($"{titulo} ({año})");
+        
 
         public void ImprimeActores()
         {
@@ -74,7 +72,7 @@ namespace Pelicula
         public void Imprimir() => Console.WriteLine($"{Nombre} ({Año})");
     }
 
-    class program
+    class Program
     {
         static void Main()
         {
