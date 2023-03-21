@@ -51,9 +51,9 @@ namespace Pelicula
 
         public void ImprimeActores()
         {
-           foreach(Actor a in actores)
+           foreach(Actor A in actores)
            {
-              a.Imprimir();
+              A.Imprimir();
            }
         }
     }
