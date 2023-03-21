@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-Namespace Pelicula
+namespace Pelicula
 {
     public class Pelicula
     {
