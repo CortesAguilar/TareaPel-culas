@@ -11,16 +11,16 @@ public class Pelicula
     private string director;
 
     public void SetTitulo(string titulo)=> this.titulo = titulo;
-    public string GetTitulo()=> titulo;
+    public string GetTitulo()=> this.titulo;
 
     public void SetAño(Int16 año)=> this.año = año;
-    public Int16 GetAño()=> año;
+    public Int16 GetAño()=> this.año;
 
     public void SetPais(string pais)=> this.pais = pais;
-    public string GetPais()=> pais;
+    public string GetPais()=> this.pais;
 
     public void SetDirector(string director)=> this.director = director;
-    public string GetDirector()=> director;
+    public string GetDirector()=> this.director;
 
     public pelicula()
     {
