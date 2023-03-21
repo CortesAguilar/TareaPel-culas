@@ -7,7 +7,7 @@ namespace Pelicula
     public class Pelicula
     {
         public string titulo;
-        public int año;
+        public Int16 año;
         public string pais;
         public string director;
     }
