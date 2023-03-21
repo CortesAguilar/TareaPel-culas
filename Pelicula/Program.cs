@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class Pelicula
 {
+    private List<Actor> actores; 
+    
     private string titulo;
     private Int16 año;
     private string pais;
@@ -20,12 +22,14 @@ public class Pelicula
     public void SetDirector(string director)=> this.director = director;
     public string GetDirector()=> director;
 
-    public Pelicula()
+    public pelicula()
     {
-        titulo = "";
-        año = 0;
+        this.titulo = "";
+        this.año = 0;
         pais = "";
         director = "";
+        actores = new List<Actor>();
+
     }
 
     public Pelicula(string titulo, Int16 año)
@@ -34,38 +38,48 @@ public class Pelicula
         this.año = año;
         pais = "";
         director = "";
+        actores = new List<Actor>();
     }
+
+
+    public void AgregaActor(Actor actor) => actores.Add(actor);
 
     public void Imprime()
     {
-        Console.WriteLine($"{titulo}\n{año}\n{pais}\n{director}");
+        Console.WriteLine($"{titulo}\n{año}");
+    }
+
+    public void ImprimeActores()
+    {
+       foreach(Actor a in actores)
+       {
+          a.Imprimir();
+       }
     }
 }
 
+public class Actor
+{
+    public string Nombre {get; set;}
+    public Int16 Año {get; set;}
 
- class Program
- {
+    public Actor(string nombre, Int16 año)
+    {
+        Nombre = nombre;
+        Año = año;
+    }
+
+    public void Imprimir() => Console.WriteLine($"{Nombre} ({Año})");
+}
+
+class program
+{
     static void Main()
     {
-        Pelicula p1 = new Pelicula();
-        p1.SetTitulo("La forma del agua");
-        p1.SetAño(2017);
-        Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
+        Pelicula p1 = new Pelicula("La La Land", 2016);
+        p1.AgregaActor(new Actor("Ryan Gosling", 1980));
+        p1.AgregaActor(new Actor("Emma Stone", 1988));
 
-        Pelicula p2 = new Pelicula();
-        p2.SetTitulo("El poder del perro");
-        p2.SetAño(2021);
-        Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
-
-        List<Pelicula> peliculas = new List<Pelicula>();
-        peliculas.Add(new Pelicula("El Rey León", 1999));
-        peliculas.Add(new Pelicula("Kill Bill", 2003));
-        peliculas.Add(new Pelicula("Mario Bros", 2023));
-        peliculas.Add(new Pelicula("Volver al futuor", 1985));
-
-        foreach(Pelicula p in peliculas)
-        {
-            p.Imprime();
-        }
+        p1.ImprimeActores();
     }
- }  
+}
