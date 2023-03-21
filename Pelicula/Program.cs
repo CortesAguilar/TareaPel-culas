@@ -56,5 +56,16 @@ public class Pelicula
         p2.SetTitulo("El poder del perro");
         p2.SetAño(2021);
         Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
+
+        List<Pelicula> peliculas = new List<Pelicula>();
+        peliculas.Add(new Pelicula("El Rey León", 1999));
+        peliculas.Add(new Pelicula("Kill Bill", 2003));
+        peliculas.Add(new Pelicula("Mario Bros", 2023));
+        peliculas.Add(new Pelicula("Volver al futuor", 1985));
+
+        foreach(Pelicula p in peliculas)
+        {
+            p.Imprime();
+        }
     }
  }  
