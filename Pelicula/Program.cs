@@ -22,7 +22,7 @@ public class Pelicula
     public void SetDirector(string director)=> this.director = director;
     public string GetDirector()=> this.director;
 
-    public pelicula()
+    public Pelicula()
     {
         this.titulo = "";
         this.año = 0;
